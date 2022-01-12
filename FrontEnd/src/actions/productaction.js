@@ -10,10 +10,8 @@ export const getProducts = () => async (dispatch) => {
       type: GET_PRODUCTS,
       payload: res.data,
     })
-    console.log('hello1')
   } catch (err) {
     console.error(err.message)
-    console.log('hello')
   }
 }
 
@@ -49,10 +47,10 @@ export const upload = (image) => async (dispatch) => {
     const res = await axios.post('/upload', formData, config)
 
     if (!res.ok) {
-      console.log('error')
+      return { message: 'Error found' }
     }
 
-    console.log('Image Uploaded')
+    return { message: 'Image Uploaded' }
   } catch (err) {
     console.error(err.message)
   }

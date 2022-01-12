@@ -23,12 +23,12 @@ function Product({ products, getProducts }) {
 
   useEffect(() => getProducts(), [])
 
-  console.log(products)
   return (
     <div className={classes.root}>
+      <h1 style={{ textAlign: 'center' }}>All Products</h1>
       <Grid container spacing={3}>
         {products.map((obj) => (
-          <Grid item xs={6} sm={3}>
+          <Grid key={obj.product_id} item xs={6} sm={4}>
             <ProductCard obj={obj} />
           </Grid>
         ))}

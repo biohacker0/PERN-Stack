@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 200,
   },
 })
 
@@ -25,7 +25,7 @@ export default function MediaCard({ obj }) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={obj.image_link}
+          image={obj.image_link ? obj.image_link : '/uploads/default-image.jpg'}
           title='Contemplative Reptile'
         />
         <CardContent>
